@@ -10,6 +10,8 @@
 
 # Preview 
 
+! [Screenshot of scheduler] (./assets/scheduler-screenshot.png)
+
 # Link 
 
 https://daniellefortin2021.github.io/Work-Day-Scheduler/
