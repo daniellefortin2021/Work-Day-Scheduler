@@ -35,6 +35,8 @@ function timeCheck () {
 
         console.log(currentTime);
         console.log(rowTime);
+    
+    
     })
 }
 
