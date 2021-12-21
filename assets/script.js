@@ -16,7 +16,7 @@ $(".saveBtn").on("click", function(){
 //check time status and alter class
 
 function timeCheck () {
-    var currentTime = 10;
+    var currentTime = moment().hour();
     $(".time-block").each(function(){
 
         var rowTime = $(this).attr("id");
