@@ -1,59 +1,48 @@
 var todayDate = moment().format('dddd, MMM Do YYYY');
 $("#currentDay").html(todayDate);
 
-var taskText = document.querySelector(".description");
-var taskTime = "";
-
-var currentTime = moment().hour();
-
-console.log(currentTime);
-
 //save text on click
 $(".saveBtn").on("click", function(){
-
-    taskText = $(this).siblings("description").val();
+    // get values from text input
+    taskText = $(this).siblings(".description").val();
     taskTime = $(this).parent().attr("id");
 
     //save to local storage
     localStorage.setItem(taskTime, taskText);
 
     console.log("button clicked");
-})
+});
 
-//check time status and alter class if necessary
+//check time status and alter class
 
-function checkTime(){
+function timeCheck () {
+    var currentTime = 10;
+    $(".time-block").each(function(){
 
-    $(".timeBlock").each(function(){
         var rowTime = $(this).attr("id");
 
-            if (rowTime < currentTime){
-                $(this).siblings("description").removeClass("future");
-                $(this).siblings("description").removeClass("present");
-                $(this).siblings("description").addClass("past");
-            }
+        $(this).removeClass("future");
+        $(this).removeClass("past");
+        $(this).removeClass("present");
+    
+        if (rowTime === currentTime) {
+            $(this).addClass("present");
+        } else if (rowTime > currentTime) {
+            $(this).addClass("future");
+        } else {
+            $(this).addClass("past");
+        }
 
-            else if (rowTime === currentTime) {
-                $(this).siblings("description").removeClass("future");
-                $(this).siblings("description").addClass("present");
-                $(this).siblings("description").removeClass("past");
-            }
-
-            else if (rowTime > currentTime) {
-                $(this).siblings("description").addClass("future");
-                $(this).siblings("description").removeClass("present");
-                $(this).siblings("description").removeClass("past");
-            }
+        console.log(currentTime);
         console.log(rowTime);
     })
-};
+}
+
 // set curent time variable
 // get time from rows - convert text to time?
 // if time = current time set attribute
 // if time > current time set attribute
 // if time < current time set attribute
-
-
 
 
 // get tasks from localstorage
@@ -65,8 +54,7 @@ $("#13 .description").val(localStorage.getItem("13"));
 $("#14 .description").val(localStorage.getItem("14"));
 $("#15 .description").val(localStorage.getItem("15"));
 $("#16 .description").val(localStorage.getItem("16"));
-$("#17 .description").val(localStorage.getItem("5"));
+$("#17 .description").val(localStorage.getItem("17"));
 
-// call functions
-
-checkTime();
+// call function to check time 
+timeCheck();
