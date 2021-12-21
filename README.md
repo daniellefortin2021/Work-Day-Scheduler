@@ -1,4 +1,5 @@
 # Work-Day-Scheduler
+This calendar application allows users to save events for each hour of the day.
 
 # Built With
 
