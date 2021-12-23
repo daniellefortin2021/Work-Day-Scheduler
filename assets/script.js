@@ -29,7 +29,7 @@ function timeCheck () {
             $(this).addClass("present");
         } else if (rowTime > currentTime) {
             $(this).addClass("future");
-        } else {
+        } else if (rowTime < currentTime) {
             $(this).addClass("past");
         }
 
