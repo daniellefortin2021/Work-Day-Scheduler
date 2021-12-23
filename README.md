@@ -11,7 +11,7 @@ This calendar application allows users to save events for each hour of the day.
 
 # Preview 
 
-! [Screenshot of scheduler] (./assets/scheduler-screenshot.png)
+![Screenshot of scheduler](./assets/scheduler-screenshot.png)
 
 # Link 
 
